@@ -1,0 +1,45 @@
+{
+  "name": "fakedata",
+  "version": "0.0.1",
+  "description": "Javascript library to create test data",
+  "main": "./src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rishikeshdhokare/fakedata.git"
+  },
+  "keywords": [
+    "random",
+    "random data",
+    "test",
+    "test data",
+    "mock",
+    "mock data",
+    "fake",
+    "fake data"
+  ],
+  "author": {
+    "name": "Rishikesh Dhokare",
+    "email": "rishikesh.m.dhokare@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Rishikesh Dhokare",
+      "email": "rishikesh.m.dhokare@gmail.com"
+    }
+  ],
+  "homepage": "https://github.com/rishikeshdhokare/fakedata",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^3.0.0",
+    "grunt": "^0.4.5",
+    "grunt-mocha-test": "^0.12.7",
+    "mocha": "^2.2.5"
+  }
+}
