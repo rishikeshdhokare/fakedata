@@ -1,50 +1,77 @@
 const util = require('../util');
+const constants = require('../constants');
 
-const pools = {
-  lower: 'abcdefghijklmnopqrstuvwxyz',
-  upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  number: '0123456789',
-  symbol: '!@#$%^&*()[]'
+const getChars = (length, set) => {
+  let chars = '';
+  for(let i = 0; i < length; i++) {
+    chars += set.charAt(Math.floor(Math.random() * set.length));
+  }
+  return chars;
 };
-pools.alpha = pools.lower + pools.upper;
-pools['undefined'] = pools.lower + pools.upper + pools.number + pools.symbol;
 
-// TODO : use array functions
 module.exports = {
-  char: function (pool) {
-    var _pool = ('' + pool).toLowerCase();
-    pool = pools[_pool] || pool;
-    return pool.charAt(this.natural(0, pool.length - 1));
+  alphabetic: length => {
+    let noOfLowerLetters;
+    let noOfUpperLetters;
+    if (length % 2 === 0) {
+      noOfLowerLetters = length / 2;
+      noOfUpperLetters = length / 2;
+    } else {
+      noOfLowerLetters = parseInt(length / 2);
+      noOfUpperLetters = length - noOfLowerLetters;
+    }
+
+    let output = '';
+    output += getChars(noOfLowerLetters, constants.LOWER_LETTERS);
+    output += getChars(noOfUpperLetters, constants.UPPER_LETTERS);
+    return output;
   },
 
-  string: function (pool, min, max) {
-    var ret = '';
-    var type = util.getType(pool);
-    var argCount = arguments.length;
-    var length;
-    if (argCount === 3) {
-      length = this.natural(min, max);
-    } else if (argCount === 2) {
-      if (type === 'string') {
-        length = min;
-      } else {
-        length = this.natural(pool, min);
-        pool = undefined;
-      }
-    } else if (argCount === 1) {
-      if (type === 'number') {
-        length = pool;
-        pool = undefined;
-      } else {
-        length = this.natural(3, 7);
-      }
+  alphanumeric: length => {
+    let noOfLowerLetters;
+    let noOfUpperLetters;
+    let noOfNumbers;
+
+    if (length % 3 === 0) {
+      noOfLowerLetters = length / 3;
+      noOfUpperLetters = length / 3;
+      noOfNumbers = length / 3;
     } else {
-      pool = undefined;
-      length = this.natural(3, 7);
+      noOfLowerLetters = parseInt(length / 3);
+      noOfUpperLetters = parseInt(length / 3);
+      noOfNumbers = length - (noOfLowerLetters + noOfUpperLetters);
     }
-    while (length--) {
-      ret += this.char(pool);
+
+    let output = '';
+    output += getChars(noOfLowerLetters, constants.LOWER_LETTERS);
+    output += getChars(noOfUpperLetters, constants.UPPER_LETTERS);
+    output += getChars(noOfNumbers, constants.NUMBERS);
+    return output;
+  },
+
+  random: length => {
+    let noOfLowerLetters;
+    let noOfUpperLetters;
+    let noOfNumbers;
+    let noOfSymbols;
+
+    if (length % 4 === 0) {
+      noOfLowerLetters = length / 4;
+      noOfUpperLetters = length / 4;
+      noOfNumbers = length / 4;
+      noOfSymbols = length / 4;
+    } else {
+      noOfLowerLetters = parseInt(length / 4);
+      noOfUpperLetters = parseInt(length / 4);
+      noOfNumbers = parseInt(length / 4);
+      noOfSymbols = length - (noOfLowerLetters + noOfUpperLetters + noOfNumbers);
     }
-    return ret;
+
+    let output = '';
+    output += getChars(noOfLowerLetters, constants.LOWER_LETTERS);
+    output += getChars(noOfUpperLetters, constants.UPPER_LETTERS);
+    output += getChars(noOfNumbers, constants.NUMBERS);
+    output += getChars(noOfSymbols, constants.SYMBOLS);
+    return output;
   }
 };
