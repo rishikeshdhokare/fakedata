@@ -1,9 +1,7 @@
 const expect = require('chai').expect;
+const fakedata = require('../../../src');
 
 describe('Number', () => {
-
-  const fakedata = require('../../../src');
-
   it('should get random int', () => {
       expect(fakedata.int()).to.be.a('number');
       expect(fakedata.int(1, 9))

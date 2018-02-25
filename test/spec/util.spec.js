@@ -1,10 +1,8 @@
 const expect = require('chai').expect;
+const util = require('../../src/util');  
 
-describe('Util', () => {
-
-  const util = require('../../src/util');  
+describe('Util', () => {  
   const obj = {'key': 'value'};
-
   it('should get empty string if object is `null` or `undefined`', () => {
     expect(util.getType(null)).to.be.equal('');
     expect(util.getType(undefined)).to.be.equal('');

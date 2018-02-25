@@ -1,9 +1,7 @@
 const expect = require('chai').expect;
+const fakedata = require('../../../src');
 
 describe('String', () => {
-
-  const fakedata = require('../../../src');
-
   it('should get alphabetic string', () => {
     expect(fakedata.alphabetic(5)).to.have.lengthOf(5);
     expect(fakedata.alphabetic(6)).to.have.lengthOf(6);
