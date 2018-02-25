@@ -6,19 +6,12 @@ var exports = {
     min = util.isNumber(min) ? util.toInt(min) : constants.MIN_NUMBER;
     max = util.isNumber(max) ? util.toInt(max) : constants.MAX_NUMBER;
     const range = util.getRange(min, max);
-    return Math.round(Math.random() * (max - range.min)) + range.min;
+    return Math.round(Math.random() * (range.max - range.min) + range.min);
   },
   
-  float: (iMin, iMax, dMin, dMax, precision) => {
-    const i = exports.int(iMin, iMax);
-    const d = exports.int(dMin, dMax);
-    let ret = [i, d].join('.');
-    ret = util.toFloat(ret);
-    if (util.isNumber(precision)) {
-      precision = util.toInt(precision);
-      ret = util.toFixed(util.toFloat(ret), precision);
-    }
-    return ret;
+  float: (min, max, precision) => {
+    let output = util.toFloat([exports.int(min, max), exports.int(min, max)].join('.'));
+    return util.isNumber(precision) ? util.toFixed(util.toFloat(output), util.toInt(precision)) : output;
   }
 };
 
