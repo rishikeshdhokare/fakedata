@@ -1,5 +1,9 @@
 # fakedata
 
+[![Build Status](https://travis-ci.org/rishikeshdhokare/fakedata.svg?branch=master)]
+[![Coverage Status](https://coveralls.io/repos/github/rishikeshdhokare/fakedata/badge.svg?branch=master)]
+
+
 > Javascript library to create test data.
 
 How to install?
