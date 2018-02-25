@@ -13,8 +13,8 @@ describe('String', () => {
   });
 
   it('should get random string', () => {
+    expect(fakedata.random(4)).to.have.lengthOf(4);
     expect(fakedata.random(5)).to.have.lengthOf(5);
     expect(fakedata.random(6)).to.have.lengthOf(6);
   });
 });
-
