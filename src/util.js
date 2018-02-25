@@ -25,10 +25,10 @@ var exports = {
     return parseFloat(ret);
   },
   
-  getRange: (val1, val2) => {
+  getRange: (min, max) => {
     return {
-      min: Math.min(val1, val2),
-      max: Math.max(val1, val2)
+      min: Math.min(min, max),
+      max: Math.max(min, max)
     };
   }
 };
