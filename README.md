@@ -8,7 +8,7 @@
 How to install?
 
 ```
-npm install fakedata
+npm install @rishikeshdhokare/fakedata
 ```
 
 How to use?
