@@ -27,4 +27,6 @@ var fakeAlphabetic = fakedata.alphabetic(5); // random alphabetic string with le
 var fakeAlphanumeric = fakedata.alphanumeric(5); // random alphanumeric string with length 5
 
 var fakeRandomString = fakedata.random(5); // random string with alphabets, numbers and special characters with length 5
+
+var fakeDate = fakedata.date(); // random date
 ```

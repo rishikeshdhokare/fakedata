@@ -1,6 +1,6 @@
 const util = require('./util');
 const output = {};
-const types = ['boolean', 'string', 'number'];
+const types = ['boolean', 'string', 'number', 'date'];
 
 types.forEach(type => {
     const module = require('./type/' + type);
