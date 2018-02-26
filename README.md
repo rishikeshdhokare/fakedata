@@ -5,6 +5,8 @@
 
 > Javascript library to create test data.
 
+  [Documentation](https://github.com/rishikeshdhokare/fakedata/wiki)
+
 How to install?
 
 ```
