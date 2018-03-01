@@ -22,3 +22,4 @@ Following are the set of api exposed through this library -
 |**fakedata.alphanumeric(length)**|alphanumeric string with `length`|for `length=5` - miv97|
 |**fakedata.random(length)**|string with alphabets, numbers and special characters with `length`|for `length=5` - es28%|
 |**fakedata.date()**|random date|Mon Feb 26 2018 22:31:26 GMT+0530 (IST)|
+|**fakedata.email()**|random email address|abcde@xyzpq.com|
