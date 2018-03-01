@@ -1,8 +1,8 @@
 const expect = require('chai').expect;
-const fakedata = require('../../../src');
+const fakedata = require('../../../src/type/date');
 
 describe('Date', () => {
   it('should get random date', () => {
-    expect(Object.prototype.toString.call(fakedata.date())).to.be.equal('[object Date]')
+    expect(Object.getPrototypeOf(fakedata.date())).to.be.equal(Date.prototype);
   });
 });

@@ -5,30 +5,20 @@
 
 > Javascript library to create test data.
 
-  [Documentation](https://github.com/rishikeshdhokare/fakedata/wiki)
-
 How to install?
 
 ```
 npm install @rishikeshdhokare/fakedata
 ```
 
-How to use?
+Following are the set of api exposed through this library - 
 
-```javascript
-var fakedata = require('@rishikeshdhokare/fakedata');
-
-var fakeBoolean = fakedata.boolean(); // true or false
-
-var fakeInt = fakedata.int(1, 99); // random integer in range 1-99
-
-var fakeFloat = fakedata.float(1, 99, 2); // random float in range 1-99 with 2 decimal point precision. e.g. 45.89
-
-var fakeAlphabetic = fakedata.alphabetic(5); // random alphabetic string with length 5
-
-var fakeAlphanumeric = fakedata.alphanumeric(5); // random alphanumeric string with length 5
-
-var fakeRandomString = fakedata.random(5); // random string with alphabets, numbers and special characters with length 5
-
-var fakeDate = fakedata.date(); // random date
-```
+|API|Description|Example|
+|---|---|---|
+|**fakedata.boolean()**|returns `true` or `false`|true, false|
+|**fakedata.int(min, max)**|returns an `integer` greater than `min` and lower than `max`|for `min=1 & max=10` - 5, 9|
+|**fakedata.float(min, max, precision)**|returns a `float` greater than `min` and lower than `max` with `precision`|for `min=1, max=10 & precision=2` - 5.5, 9.4|
+|**fakedata.alphabetic(length)**|alphabetic string with `length`|for `length=5` - akqde|
+|**fakedata.alphanumeric(length)**|alphanumeric string with `length`|for `length=5` - miv97|
+|**fakedata.random(length)**|string with alphabets, numbers and special characters with `length`|for `length=5` - es28%|
+|**fakedata.date()**|random date|Mon Feb 26 2018 22:31:26 GMT+0530 (IST)|

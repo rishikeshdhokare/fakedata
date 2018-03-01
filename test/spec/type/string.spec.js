@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const fakedata = require('../../../src');
+const fakedata = require('../../../src/type/string');
 
 describe('String', () => {
   it('should get alphabetic string', () => {
