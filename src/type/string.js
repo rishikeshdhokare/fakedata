@@ -1,4 +1,4 @@
-const constants = require('../constants');
+const { LOWER_LETTERS, UPPER_LETTERS, NUMBERS, SYMBOLS } = require('../constants');
 
 const getChars = (length, set) => {
   let chars = '';
@@ -16,13 +16,13 @@ module.exports = {
       noOfLowerLetters = length / 2;
       noOfUpperLetters = length / 2;
     } else {
-      noOfLowerLetters = parseInt(length / 2);
+      noOfLowerLetters = Math.floor(length / 2);
       noOfUpperLetters = length - noOfLowerLetters;
     }
 
     let output = '';
-    output += getChars(noOfLowerLetters, constants.LOWER_LETTERS);
-    output += getChars(noOfUpperLetters, constants.UPPER_LETTERS);
+    output += getChars(noOfLowerLetters, LOWER_LETTERS);
+    output += getChars(noOfUpperLetters, UPPER_LETTERS);
     return output;
   },
 
@@ -36,15 +36,15 @@ module.exports = {
       noOfUpperLetters = length / 3;
       noOfNumbers = length / 3;
     } else {
-      noOfLowerLetters = parseInt(length / 3);
-      noOfUpperLetters = parseInt(length / 3);
+      noOfLowerLetters = Math.floor(length / 3);
+      noOfUpperLetters = Math.floor(length / 3);
       noOfNumbers = length - (noOfLowerLetters + noOfUpperLetters);
     }
 
     let output = '';
-    output += getChars(noOfLowerLetters, constants.LOWER_LETTERS);
-    output += getChars(noOfUpperLetters, constants.UPPER_LETTERS);
-    output += getChars(noOfNumbers, constants.NUMBERS);
+    output += getChars(noOfLowerLetters, LOWER_LETTERS);
+    output += getChars(noOfUpperLetters, UPPER_LETTERS);
+    output += getChars(noOfNumbers, NUMBERS);
     return output;
   },
 
@@ -60,17 +60,17 @@ module.exports = {
       noOfNumbers = length / 4;
       noOfSymbols = length / 4;
     } else {
-      noOfLowerLetters = parseInt(length / 4);
-      noOfUpperLetters = parseInt(length / 4);
-      noOfNumbers = parseInt(length / 4);
+      noOfLowerLetters = Math.floor(length / 4);
+      noOfUpperLetters = Math.floor(length / 4);
+      noOfNumbers = Math.floor(length / 4);
       noOfSymbols = length - (noOfLowerLetters + noOfUpperLetters + noOfNumbers);
     }
 
     let output = '';
-    output += getChars(noOfLowerLetters, constants.LOWER_LETTERS);
-    output += getChars(noOfUpperLetters, constants.UPPER_LETTERS);
-    output += getChars(noOfNumbers, constants.NUMBERS);
-    output += getChars(noOfSymbols, constants.SYMBOLS);
+    output += getChars(noOfLowerLetters, LOWER_LETTERS);
+    output += getChars(noOfUpperLetters, UPPER_LETTERS);
+    output += getChars(noOfNumbers, NUMBERS);
+    output += getChars(noOfSymbols, SYMBOLS);
     return output;
   }
 };

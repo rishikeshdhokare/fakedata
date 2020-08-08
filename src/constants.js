@@ -5,6 +5,8 @@ module.exports = {
   LOWER_LETTERS: 'abcdefghijklmnopqrstuvwxyz',
   UPPER_LETTERS: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   NUMBERS: '0123456789',
-  SYMBOLS: '!@#$%^&*()[]'
+  SYMBOLS: '!@#$%^&*()[]',
+  AT_SIGN: '@',
+  DOT_COM: '.com'
 }
 

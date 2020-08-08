@@ -1,5 +1,5 @@
-const constants = require('../constants');
+const { MIDDLE } = require('../constants');
 
 module.exports = {
-  boolean: () => Math.random() > constants.MIDDLE
+  boolean: () => Math.random() > MIDDLE
 };

@@ -1,25 +1,25 @@
-var exports = {
-  getType: obj => obj === null || obj === undefined ? '' : Object.prototype.toString.call(obj).match(/\[object (\w+)\]/)[1].toLowerCase(),
+const utils = {
+  getType: obj => obj === null || obj === undefined ? '' : Object.prototype.toString.call(obj).match(/\[object (\w+)/)[1].toLowerCase(),
 
   hasKey: (obj, key) => obj && Object.prototype.hasOwnProperty.call(obj, key),
 
   isUndefined: val => typeof val === 'undefined',
 
-  isNumber: val => !exports.isUndefined(val) && !isNaN(val),
+  isNumber: val => !utils.isUndefined(val) && !isNaN(val),
 
   toInt: val => parseInt(val, 10),
 
   toFloat: val => parseFloat(val),
 
   getPrecision: float => {
-    var tail = (float + '').split('.')[1];
+    const tail = (float + '').split('.')[1];
     return tail ? tail.length : 0;
   },
 
   toFixed: (val, precision) => {
     precision = Math.abs(precision);
-    var power = Math.pow(10, precision);
-    var ret = (Math.round(val * power) / power).toFixed(precision);
+    const power = Math.pow(10, precision);
+    const ret = (Math.round(val * power) / power).toFixed(precision);
     return parseFloat(ret);
   },
   
@@ -31,4 +31,4 @@ var exports = {
   }
 };
 
-module.exports = exports;
+module.exports = utils;

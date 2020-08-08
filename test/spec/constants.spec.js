@@ -10,5 +10,7 @@ describe('Constants', () => {
     expect(constants.UPPER_LETTERS).to.be.equal('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
     expect(constants.NUMBERS).to.be.equal('0123456789');
     expect(constants.SYMBOLS).to.be.equal('!@#$%^&*()[]');
+    expect(constants.AT_SIGN).to.be.equal('@');
+    expect(constants.DOT_COM).to.be.equal('.com');
   });
 });
