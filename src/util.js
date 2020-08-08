@@ -1,5 +1,3 @@
-const constants = require('./constants');
-
 var exports = {
   getType: obj => obj === null || obj === undefined ? '' : Object.prototype.toString.call(obj).match(/\[object (\w+)\]/)[1].toLowerCase(),
 

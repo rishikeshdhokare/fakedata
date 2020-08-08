@@ -1,4 +1,3 @@
-const util = require('../util');
 const constants = require('../constants');
 
 const getChars = (length, set) => {

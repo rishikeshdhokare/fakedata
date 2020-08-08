@@ -1,6 +1,3 @@
-const util = require('../util');
-const fakeBoolean = require('./boolean');
-
 module.exports = {
   date: () => {
     let date = new Date();
