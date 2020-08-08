@@ -1,4 +1,4 @@
-name: test & publish to npm
+name: test
 on:
   push:
     branches: [ master ]
