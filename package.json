@@ -1,6 +1,6 @@
 {
   "name": "@rishikeshdhokare/fakedata",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Javascript library to create test data",
   "main": "./src/index.js",
   "directories": {
